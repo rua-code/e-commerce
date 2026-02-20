@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 export default function Navbar() {
   
  
@@ -29,11 +30,13 @@ export default function Navbar() {
            <br/>
            TECH MART
           </Typography>
-          <Box sx={{ display:{xs:'none',sm:'flex'}}}>
- <Button  sx={{ color:"black"}}>Home</Button>
-           <Button sx={{ color:"black"}}>Pages</Button>
-            <Button sx={{ color:"black"}}>products</Button>
-             <Button sx={{ color:"black"}}>contact</Button>
+          <Box sx={{ display:{xs:'none',sm:'flex'}, gap:2}}>
+          <Link component={RouterLink} to="/" underline='none' color='inheart'> Home</Link>
+          <Link component={RouterLink} to="/products" underline='none' color='inheart'> Products</Link>
+          <Link component={RouterLink} to="/login" underline='none' color='inheart'>Login</Link>
+          <Link component={RouterLink} to="/register" underline='none' color='inheart'> register</Link>
+            
+          
           </Box>
          
         </Toolbar>
