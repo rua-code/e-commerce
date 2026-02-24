@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Box, Button, Container, TextField, Typography } from '@mui/material'
+import { useState } from 'react';
 
 export default function Login() {
   const {register,handleSubmit,formState: { errors },}=useForm({resolver: yupResolver(LoginSchema),});
@@ -12,8 +13,12 @@ export default function Login() {
   const logINForm=async (values)=>{
 try{
   const response = await axios.post(`https://knowledgeshop.runasp.net/api/auth/Account/Login`,values);
+if(response.status === 200){
+localStorage.setItem('token',response.data.accessToken)
+}
 console.log("respons", response)
-}catch(error)
+}
+catch(error)
 {
 console.log("catch error ", error)
 }

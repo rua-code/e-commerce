@@ -32,7 +32,7 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ display:{xs:'none',sm:'flex'}, gap:2}}>
           <Link component={RouterLink} to="/" underline='none' color='inheart'> Home</Link>
-          <Link component={RouterLink} to="/products" underline='none' color='inheart'> Products</Link>
+          <Link component={RouterLink} to="/cart" underline='none' color='inheart'> Cart </Link>
           <Link component={RouterLink} to="/login" underline='none' color='inheart'>Login</Link>
           <Link component={RouterLink} to="/register" underline='none' color='inheart'> register</Link>
             
