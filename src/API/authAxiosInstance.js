@@ -5,7 +5,7 @@ const authAxiosInstance = axios.create({
     baseURL: "https://knowledgeshop.runasp.net/api",
     headers: {
         "Accept-Language": "ar",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${token}`,
     },
 });
 
